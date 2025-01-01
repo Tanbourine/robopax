@@ -1,36 +1,39 @@
 #include <iostream>
 #include <chrono>
 #include <thread>
-#include "motors/MotorSim.h"
-#include "state_machine/motors/motor_idle/MotorIdle.h"
-#include "state_machine/motors/motor_position_control/MotorPositionControl.h"
+#include "servos/ServoSim.h"
+#include "state_machine/servos/servo_idle/ServoIdle.h"
+#include "state_machine/servos/position_control/PositionControl.h"
+#include "state_machine/servos/AbortState.h"
 #include "state_machine/StateMachine.h"
 #include "common/logger/ConsoleLogger.h"
+#include "servos/models/ServoData.h"
+#include "servos/models/ServoCmd.h"
 
 int main() {
 
     ConsoleLogger logger;
     logger.log("Hello World!");
 
-    MotorData motorData;
-    MotorSim motor(motorData);
-    MotorIdleData  motorIdleData(motorData);
-    MotorIdle idleState(logger, motorIdleData);
-    MotorPositionControl positionControlState(logger);
+    // Initialize hardware
+    ServoData motorData;
+    ServoCmd motorCmd;
+    motorCmd.m_max_velocity_deg_s = 30.0;
 
-    StateMachine sm(logger, "Test State Machine", idleState);
+    ServoSim motor(motorData, motorCmd);
+
+    // Initialize States
+    ServoIdleData  motorIdleData(motorData);
+    ServoIdle idleState(logger, motorIdleData, motor);
+    PositionControl positionControlState(logger, motor);
+    AbortState abortState(logger, motor);
+
+    StateMachine sm(logger, "Test State Machine", idleState, abortState);
     sm.init();
 
     sm.registerState(positionControlState);
 
-
-    // MotorSim sim;
-    // sim.init();
-    // sim.setControlMode(ControlMode::POSITION);
-    // sim.setDesiredPosition(45.0f);
-    // sim.setMaxVelocity(15.0f);
-
-    float secondsToSimulate = 0.5;
+    float secondsToSimulate = 10.0;
     int deltaMs = 100;
     int numSteps = (secondsToSimulate * 1000) / deltaMs;
 
@@ -38,14 +41,6 @@ int main() {
 
         sm.update(deltaMs);
 
-        // sim.update(deltaMs / 1000.0);  // 100 ms
-
-        // if (i > 50) {
-        //     sim.setDesiredPosition(0.0);
-        // }
-        // std::cout << "Iteration " << i 
-        //           << ": Position=" << sim.getActualPosition() 
-        //         << std::endl;
         std::this_thread::sleep_for(std::chrono::milliseconds(deltaMs));
     }
 

@@ -201,53 +201,29 @@ src/main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/robopax.dir/build.make CMakeFiles/robopax.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
-src/motors/MotorController.o: src/motors/MotorController.cpp.o
-.PHONY : src/motors/MotorController.o
+src/servos/ServoSim.o: src/servos/ServoSim.cpp.o
+.PHONY : src/servos/ServoSim.o
 
 # target to build an object file
-src/motors/MotorController.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/robopax.dir/build.make CMakeFiles/robopax.dir/src/motors/MotorController.cpp.o
-.PHONY : src/motors/MotorController.cpp.o
+src/servos/ServoSim.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/robopax.dir/build.make CMakeFiles/robopax.dir/src/servos/ServoSim.cpp.o
+.PHONY : src/servos/ServoSim.cpp.o
 
-src/motors/MotorController.i: src/motors/MotorController.cpp.i
-.PHONY : src/motors/MotorController.i
-
-# target to preprocess a source file
-src/motors/MotorController.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/robopax.dir/build.make CMakeFiles/robopax.dir/src/motors/MotorController.cpp.i
-.PHONY : src/motors/MotorController.cpp.i
-
-src/motors/MotorController.s: src/motors/MotorController.cpp.s
-.PHONY : src/motors/MotorController.s
-
-# target to generate assembly for a file
-src/motors/MotorController.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/robopax.dir/build.make CMakeFiles/robopax.dir/src/motors/MotorController.cpp.s
-.PHONY : src/motors/MotorController.cpp.s
-
-src/motors/MotorSim.o: src/motors/MotorSim.cpp.o
-.PHONY : src/motors/MotorSim.o
-
-# target to build an object file
-src/motors/MotorSim.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/robopax.dir/build.make CMakeFiles/robopax.dir/src/motors/MotorSim.cpp.o
-.PHONY : src/motors/MotorSim.cpp.o
-
-src/motors/MotorSim.i: src/motors/MotorSim.cpp.i
-.PHONY : src/motors/MotorSim.i
+src/servos/ServoSim.i: src/servos/ServoSim.cpp.i
+.PHONY : src/servos/ServoSim.i
 
 # target to preprocess a source file
-src/motors/MotorSim.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/robopax.dir/build.make CMakeFiles/robopax.dir/src/motors/MotorSim.cpp.i
-.PHONY : src/motors/MotorSim.cpp.i
+src/servos/ServoSim.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/robopax.dir/build.make CMakeFiles/robopax.dir/src/servos/ServoSim.cpp.i
+.PHONY : src/servos/ServoSim.cpp.i
 
-src/motors/MotorSim.s: src/motors/MotorSim.cpp.s
-.PHONY : src/motors/MotorSim.s
+src/servos/ServoSim.s: src/servos/ServoSim.cpp.s
+.PHONY : src/servos/ServoSim.s
 
 # target to generate assembly for a file
-src/motors/MotorSim.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/robopax.dir/build.make CMakeFiles/robopax.dir/src/motors/MotorSim.cpp.s
-.PHONY : src/motors/MotorSim.cpp.s
+src/servos/ServoSim.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/robopax.dir/build.make CMakeFiles/robopax.dir/src/servos/ServoSim.cpp.s
+.PHONY : src/servos/ServoSim.cpp.s
 
 src/state_machine/State.o: src/state_machine/State.cpp.o
 .PHONY : src/state_machine/State.o
@@ -321,77 +297,125 @@ src/state_machine/StateUtils.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/robopax.dir/build.make CMakeFiles/robopax.dir/src/state_machine/StateUtils.cpp.s
 .PHONY : src/state_machine/StateUtils.cpp.s
 
-src/state_machine/motors/models/MotorData.o: src/state_machine/motors/models/MotorData.cpp.o
-.PHONY : src/state_machine/motors/models/MotorData.o
+src/state_machine/servos/AbortState.o: src/state_machine/servos/AbortState.cpp.o
+.PHONY : src/state_machine/servos/AbortState.o
 
 # target to build an object file
-src/state_machine/motors/models/MotorData.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/robopax.dir/build.make CMakeFiles/robopax.dir/src/state_machine/motors/models/MotorData.cpp.o
-.PHONY : src/state_machine/motors/models/MotorData.cpp.o
+src/state_machine/servos/AbortState.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/robopax.dir/build.make CMakeFiles/robopax.dir/src/state_machine/servos/AbortState.cpp.o
+.PHONY : src/state_machine/servos/AbortState.cpp.o
 
-src/state_machine/motors/models/MotorData.i: src/state_machine/motors/models/MotorData.cpp.i
-.PHONY : src/state_machine/motors/models/MotorData.i
+src/state_machine/servos/AbortState.i: src/state_machine/servos/AbortState.cpp.i
+.PHONY : src/state_machine/servos/AbortState.i
 
 # target to preprocess a source file
-src/state_machine/motors/models/MotorData.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/robopax.dir/build.make CMakeFiles/robopax.dir/src/state_machine/motors/models/MotorData.cpp.i
-.PHONY : src/state_machine/motors/models/MotorData.cpp.i
+src/state_machine/servos/AbortState.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/robopax.dir/build.make CMakeFiles/robopax.dir/src/state_machine/servos/AbortState.cpp.i
+.PHONY : src/state_machine/servos/AbortState.cpp.i
 
-src/state_machine/motors/models/MotorData.s: src/state_machine/motors/models/MotorData.cpp.s
-.PHONY : src/state_machine/motors/models/MotorData.s
+src/state_machine/servos/AbortState.s: src/state_machine/servos/AbortState.cpp.s
+.PHONY : src/state_machine/servos/AbortState.s
 
 # target to generate assembly for a file
-src/state_machine/motors/models/MotorData.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/robopax.dir/build.make CMakeFiles/robopax.dir/src/state_machine/motors/models/MotorData.cpp.s
-.PHONY : src/state_machine/motors/models/MotorData.cpp.s
+src/state_machine/servos/AbortState.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/robopax.dir/build.make CMakeFiles/robopax.dir/src/state_machine/servos/AbortState.cpp.s
+.PHONY : src/state_machine/servos/AbortState.cpp.s
 
-src/state_machine/motors/motor_idle/MotorIdle.o: src/state_machine/motors/motor_idle/MotorIdle.cpp.o
-.PHONY : src/state_machine/motors/motor_idle/MotorIdle.o
+src/state_machine/servos/position_control/PositionControl.o: src/state_machine/servos/position_control/PositionControl.cpp.o
+.PHONY : src/state_machine/servos/position_control/PositionControl.o
 
 # target to build an object file
-src/state_machine/motors/motor_idle/MotorIdle.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/robopax.dir/build.make CMakeFiles/robopax.dir/src/state_machine/motors/motor_idle/MotorIdle.cpp.o
-.PHONY : src/state_machine/motors/motor_idle/MotorIdle.cpp.o
+src/state_machine/servos/position_control/PositionControl.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/robopax.dir/build.make CMakeFiles/robopax.dir/src/state_machine/servos/position_control/PositionControl.cpp.o
+.PHONY : src/state_machine/servos/position_control/PositionControl.cpp.o
 
-src/state_machine/motors/motor_idle/MotorIdle.i: src/state_machine/motors/motor_idle/MotorIdle.cpp.i
-.PHONY : src/state_machine/motors/motor_idle/MotorIdle.i
+src/state_machine/servos/position_control/PositionControl.i: src/state_machine/servos/position_control/PositionControl.cpp.i
+.PHONY : src/state_machine/servos/position_control/PositionControl.i
 
 # target to preprocess a source file
-src/state_machine/motors/motor_idle/MotorIdle.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/robopax.dir/build.make CMakeFiles/robopax.dir/src/state_machine/motors/motor_idle/MotorIdle.cpp.i
-.PHONY : src/state_machine/motors/motor_idle/MotorIdle.cpp.i
+src/state_machine/servos/position_control/PositionControl.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/robopax.dir/build.make CMakeFiles/robopax.dir/src/state_machine/servos/position_control/PositionControl.cpp.i
+.PHONY : src/state_machine/servos/position_control/PositionControl.cpp.i
 
-src/state_machine/motors/motor_idle/MotorIdle.s: src/state_machine/motors/motor_idle/MotorIdle.cpp.s
-.PHONY : src/state_machine/motors/motor_idle/MotorIdle.s
+src/state_machine/servos/position_control/PositionControl.s: src/state_machine/servos/position_control/PositionControl.cpp.s
+.PHONY : src/state_machine/servos/position_control/PositionControl.s
 
 # target to generate assembly for a file
-src/state_machine/motors/motor_idle/MotorIdle.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/robopax.dir/build.make CMakeFiles/robopax.dir/src/state_machine/motors/motor_idle/MotorIdle.cpp.s
-.PHONY : src/state_machine/motors/motor_idle/MotorIdle.cpp.s
+src/state_machine/servos/position_control/PositionControl.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/robopax.dir/build.make CMakeFiles/robopax.dir/src/state_machine/servos/position_control/PositionControl.cpp.s
+.PHONY : src/state_machine/servos/position_control/PositionControl.cpp.s
 
-src/state_machine/motors/motor_position_control/MotorPositionControl.o: src/state_machine/motors/motor_position_control/MotorPositionControl.cpp.o
-.PHONY : src/state_machine/motors/motor_position_control/MotorPositionControl.o
+src/state_machine/servos/servo_idle/ServoIdle.o: src/state_machine/servos/servo_idle/ServoIdle.cpp.o
+.PHONY : src/state_machine/servos/servo_idle/ServoIdle.o
 
 # target to build an object file
-src/state_machine/motors/motor_position_control/MotorPositionControl.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/robopax.dir/build.make CMakeFiles/robopax.dir/src/state_machine/motors/motor_position_control/MotorPositionControl.cpp.o
-.PHONY : src/state_machine/motors/motor_position_control/MotorPositionControl.cpp.o
+src/state_machine/servos/servo_idle/ServoIdle.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/robopax.dir/build.make CMakeFiles/robopax.dir/src/state_machine/servos/servo_idle/ServoIdle.cpp.o
+.PHONY : src/state_machine/servos/servo_idle/ServoIdle.cpp.o
 
-src/state_machine/motors/motor_position_control/MotorPositionControl.i: src/state_machine/motors/motor_position_control/MotorPositionControl.cpp.i
-.PHONY : src/state_machine/motors/motor_position_control/MotorPositionControl.i
+src/state_machine/servos/servo_idle/ServoIdle.i: src/state_machine/servos/servo_idle/ServoIdle.cpp.i
+.PHONY : src/state_machine/servos/servo_idle/ServoIdle.i
 
 # target to preprocess a source file
-src/state_machine/motors/motor_position_control/MotorPositionControl.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/robopax.dir/build.make CMakeFiles/robopax.dir/src/state_machine/motors/motor_position_control/MotorPositionControl.cpp.i
-.PHONY : src/state_machine/motors/motor_position_control/MotorPositionControl.cpp.i
+src/state_machine/servos/servo_idle/ServoIdle.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/robopax.dir/build.make CMakeFiles/robopax.dir/src/state_machine/servos/servo_idle/ServoIdle.cpp.i
+.PHONY : src/state_machine/servos/servo_idle/ServoIdle.cpp.i
 
-src/state_machine/motors/motor_position_control/MotorPositionControl.s: src/state_machine/motors/motor_position_control/MotorPositionControl.cpp.s
-.PHONY : src/state_machine/motors/motor_position_control/MotorPositionControl.s
+src/state_machine/servos/servo_idle/ServoIdle.s: src/state_machine/servos/servo_idle/ServoIdle.cpp.s
+.PHONY : src/state_machine/servos/servo_idle/ServoIdle.s
 
 # target to generate assembly for a file
-src/state_machine/motors/motor_position_control/MotorPositionControl.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/robopax.dir/build.make CMakeFiles/robopax.dir/src/state_machine/motors/motor_position_control/MotorPositionControl.cpp.s
-.PHONY : src/state_machine/motors/motor_position_control/MotorPositionControl.cpp.s
+src/state_machine/servos/servo_idle/ServoIdle.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/robopax.dir/build.make CMakeFiles/robopax.dir/src/state_machine/servos/servo_idle/ServoIdle.cpp.s
+.PHONY : src/state_machine/servos/servo_idle/ServoIdle.cpp.s
+
+src/state_machine/step_sequencer/Step.o: src/state_machine/step_sequencer/Step.cpp.o
+.PHONY : src/state_machine/step_sequencer/Step.o
+
+# target to build an object file
+src/state_machine/step_sequencer/Step.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/robopax.dir/build.make CMakeFiles/robopax.dir/src/state_machine/step_sequencer/Step.cpp.o
+.PHONY : src/state_machine/step_sequencer/Step.cpp.o
+
+src/state_machine/step_sequencer/Step.i: src/state_machine/step_sequencer/Step.cpp.i
+.PHONY : src/state_machine/step_sequencer/Step.i
+
+# target to preprocess a source file
+src/state_machine/step_sequencer/Step.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/robopax.dir/build.make CMakeFiles/robopax.dir/src/state_machine/step_sequencer/Step.cpp.i
+.PHONY : src/state_machine/step_sequencer/Step.cpp.i
+
+src/state_machine/step_sequencer/Step.s: src/state_machine/step_sequencer/Step.cpp.s
+.PHONY : src/state_machine/step_sequencer/Step.s
+
+# target to generate assembly for a file
+src/state_machine/step_sequencer/Step.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/robopax.dir/build.make CMakeFiles/robopax.dir/src/state_machine/step_sequencer/Step.cpp.s
+.PHONY : src/state_machine/step_sequencer/Step.cpp.s
+
+src/state_machine/step_sequencer/StepSequencer.o: src/state_machine/step_sequencer/StepSequencer.cpp.o
+.PHONY : src/state_machine/step_sequencer/StepSequencer.o
+
+# target to build an object file
+src/state_machine/step_sequencer/StepSequencer.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/robopax.dir/build.make CMakeFiles/robopax.dir/src/state_machine/step_sequencer/StepSequencer.cpp.o
+.PHONY : src/state_machine/step_sequencer/StepSequencer.cpp.o
+
+src/state_machine/step_sequencer/StepSequencer.i: src/state_machine/step_sequencer/StepSequencer.cpp.i
+.PHONY : src/state_machine/step_sequencer/StepSequencer.i
+
+# target to preprocess a source file
+src/state_machine/step_sequencer/StepSequencer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/robopax.dir/build.make CMakeFiles/robopax.dir/src/state_machine/step_sequencer/StepSequencer.cpp.i
+.PHONY : src/state_machine/step_sequencer/StepSequencer.cpp.i
+
+src/state_machine/step_sequencer/StepSequencer.s: src/state_machine/step_sequencer/StepSequencer.cpp.s
+.PHONY : src/state_machine/step_sequencer/StepSequencer.s
+
+# target to generate assembly for a file
+src/state_machine/step_sequencer/StepSequencer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/robopax.dir/build.make CMakeFiles/robopax.dir/src/state_machine/step_sequencer/StepSequencer.cpp.s
+.PHONY : src/state_machine/step_sequencer/StepSequencer.cpp.s
 
 # Help Target
 help:
@@ -411,12 +435,9 @@ help:
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
-	@echo "... src/motors/MotorController.o"
-	@echo "... src/motors/MotorController.i"
-	@echo "... src/motors/MotorController.s"
-	@echo "... src/motors/MotorSim.o"
-	@echo "... src/motors/MotorSim.i"
-	@echo "... src/motors/MotorSim.s"
+	@echo "... src/servos/ServoSim.o"
+	@echo "... src/servos/ServoSim.i"
+	@echo "... src/servos/ServoSim.s"
 	@echo "... src/state_machine/State.o"
 	@echo "... src/state_machine/State.i"
 	@echo "... src/state_machine/State.s"
@@ -426,15 +447,21 @@ help:
 	@echo "... src/state_machine/StateUtils.o"
 	@echo "... src/state_machine/StateUtils.i"
 	@echo "... src/state_machine/StateUtils.s"
-	@echo "... src/state_machine/motors/models/MotorData.o"
-	@echo "... src/state_machine/motors/models/MotorData.i"
-	@echo "... src/state_machine/motors/models/MotorData.s"
-	@echo "... src/state_machine/motors/motor_idle/MotorIdle.o"
-	@echo "... src/state_machine/motors/motor_idle/MotorIdle.i"
-	@echo "... src/state_machine/motors/motor_idle/MotorIdle.s"
-	@echo "... src/state_machine/motors/motor_position_control/MotorPositionControl.o"
-	@echo "... src/state_machine/motors/motor_position_control/MotorPositionControl.i"
-	@echo "... src/state_machine/motors/motor_position_control/MotorPositionControl.s"
+	@echo "... src/state_machine/servos/AbortState.o"
+	@echo "... src/state_machine/servos/AbortState.i"
+	@echo "... src/state_machine/servos/AbortState.s"
+	@echo "... src/state_machine/servos/position_control/PositionControl.o"
+	@echo "... src/state_machine/servos/position_control/PositionControl.i"
+	@echo "... src/state_machine/servos/position_control/PositionControl.s"
+	@echo "... src/state_machine/servos/servo_idle/ServoIdle.o"
+	@echo "... src/state_machine/servos/servo_idle/ServoIdle.i"
+	@echo "... src/state_machine/servos/servo_idle/ServoIdle.s"
+	@echo "... src/state_machine/step_sequencer/Step.o"
+	@echo "... src/state_machine/step_sequencer/Step.i"
+	@echo "... src/state_machine/step_sequencer/Step.s"
+	@echo "... src/state_machine/step_sequencer/StepSequencer.o"
+	@echo "... src/state_machine/step_sequencer/StepSequencer.i"
+	@echo "... src/state_machine/step_sequencer/StepSequencer.s"
 .PHONY : help
 
 

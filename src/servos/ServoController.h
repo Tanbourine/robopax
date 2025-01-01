@@ -2,22 +2,16 @@
 
 #include <cstdint>
 #include <string>
-#include "../state_machine/motors/models/MotorData.h"
+#include "ServoController.h"
+#include "models/ServoData.h"
+#include "models/ServoCmd.h"
 
-enum class ControlMode {
-    POSITION,
-    TORQUE
-};
-
-class MotorController {
+class ServoController {
 public:
-    MotorController(MotorData data);
+    ServoController(ServoData& data, ServoCmd& cmd): m_data(data), m_cmd(cmd) {};
 
     // Initialize the motor controller (hardware or sim)
     virtual void init() = 0;
-
-    // Set control mode (position or torque)
-    virtual void setControlMode(ControlMode mode) = 0;
 
     // Command a position (in degrees or radians, your choice)
     virtual void setDesiredPosition(float position) = 0;
@@ -25,12 +19,13 @@ public:
     virtual void setMaxVelocity(float maxVelocity_deg_s) = 0;
 
     // Update method, called periodically to step control logic
-    virtual void update(float deltaTime) = 0;
+    virtual void update(float deltaTime_ms) = 0;
 
     // Optionally, read back actual position/torque
     virtual float getActualPosition() const = 0;
 
 
 protected:
-    MotorData m_data;
+    ServoData& m_data;
+    ServoCmd& m_cmd;
 };

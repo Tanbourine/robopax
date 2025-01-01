@@ -6,5 +6,5 @@
 class ConsoleLogger : public Logger {
 public:
     ConsoleLogger();
-    void logInternal(const std::string& message) override;
+    void output(const std::string& message) override;
 };

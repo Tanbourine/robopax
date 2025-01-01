@@ -8,7 +8,7 @@
 
 class StateMachine {
 public:
-    StateMachine(Logger& logger, const std::string& stateMachineName, State& initialState);
+    StateMachine(Logger& logger, const std::string& stateMachineName, State& initialState, State& abortState);
 
     void init();
     void update(int deltaTimeMs);
@@ -17,7 +17,10 @@ public:
 
 private:
     Logger& m_logger;
+    State& m_initialState;
+    State& m_abortState;
     void transitionStates(StateEnum destState);
-    State& m_currentState;
+    void abort();
+    std::reference_wrapper<State> m_currentState;
     std::unordered_map<StateEnum, std::reference_wrapper<State>> m_states;
 };

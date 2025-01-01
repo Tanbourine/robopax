@@ -1,10 +1,12 @@
 #pragma once
 
 enum class StateEnum {
+    ABORTED = -3,
+    ABORTING = -2,
     INVALID = -1,
     UNSET = 0,
-    MOTOR_IDLE = 1,
-    MOTOR_POSITION_CONTROL = 2
+    IDLE = 1,
+    POSITION_CONTROL = 2,
 
 };
 
