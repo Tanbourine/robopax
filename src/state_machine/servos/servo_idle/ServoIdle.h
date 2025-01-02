@@ -6,6 +6,7 @@
 #include <vector>
 #include "../../step_sequencer/Step.h"
 #include "../../../components/servos/models/ServoData.h"
+#include "../../../common/logger/Logger.h"
 
 class ServoIdle : public State {
 public:
@@ -17,10 +18,6 @@ protected:
     void onUpdate(int deltaMs) override;
     bool shouldAbort() override;
     void createSteps() override;
-
-    // StateEnum m_state;
-    // std::string m_stateName;
-    // bool m_isActive;
 
     ServoIdleData& m_data;
     ServoControllerComponent& m_motor;

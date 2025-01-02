@@ -5,6 +5,7 @@
 #include <vector>
 #include "../../step_sequencer/Step.h"
 #include "../../StateMachine.h"
+#include <memory>
 
 class PositionControl : public State {
 public:
@@ -21,6 +22,7 @@ protected:
     StateEnum m_state;
     std::string m_stateName;
     bool m_isActive;
+    std::unique_ptr<StepSequencer> m_stepSequencer = std::make_unique<StepSequencer>(m_logger);
 
 private:
     ServoControllerComponent& m_motor;

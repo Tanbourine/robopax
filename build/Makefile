@@ -177,30 +177,6 @@ src/common/logger/Logger.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/robopax.dir/build.make CMakeFiles/robopax.dir/src/common/logger/Logger.cpp.s
 .PHONY : src/common/logger/Logger.cpp.s
 
-src/components/Component.o: src/components/Component.cpp.o
-.PHONY : src/components/Component.o
-
-# target to build an object file
-src/components/Component.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/robopax.dir/build.make CMakeFiles/robopax.dir/src/components/Component.cpp.o
-.PHONY : src/components/Component.cpp.o
-
-src/components/Component.i: src/components/Component.cpp.i
-.PHONY : src/components/Component.i
-
-# target to preprocess a source file
-src/components/Component.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/robopax.dir/build.make CMakeFiles/robopax.dir/src/components/Component.cpp.i
-.PHONY : src/components/Component.cpp.i
-
-src/components/Component.s: src/components/Component.cpp.s
-.PHONY : src/components/Component.s
-
-# target to generate assembly for a file
-src/components/Component.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/robopax.dir/build.make CMakeFiles/robopax.dir/src/components/Component.cpp.s
-.PHONY : src/components/Component.cpp.s
-
 src/components/component_manager/ComponentManager.o: src/components/component_manager/ComponentManager.cpp.o
 .PHONY : src/components/component_manager/ComponentManager.o
 
@@ -417,6 +393,30 @@ src/state_machine/servos/servo_idle/ServoIdle.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/robopax.dir/build.make CMakeFiles/robopax.dir/src/state_machine/servos/servo_idle/ServoIdle.cpp.s
 .PHONY : src/state_machine/servos/servo_idle/ServoIdle.cpp.s
 
+src/state_machine/servos/servo_init/ServoInit.o: src/state_machine/servos/servo_init/ServoInit.cpp.o
+.PHONY : src/state_machine/servos/servo_init/ServoInit.o
+
+# target to build an object file
+src/state_machine/servos/servo_init/ServoInit.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/robopax.dir/build.make CMakeFiles/robopax.dir/src/state_machine/servos/servo_init/ServoInit.cpp.o
+.PHONY : src/state_machine/servos/servo_init/ServoInit.cpp.o
+
+src/state_machine/servos/servo_init/ServoInit.i: src/state_machine/servos/servo_init/ServoInit.cpp.i
+.PHONY : src/state_machine/servos/servo_init/ServoInit.i
+
+# target to preprocess a source file
+src/state_machine/servos/servo_init/ServoInit.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/robopax.dir/build.make CMakeFiles/robopax.dir/src/state_machine/servos/servo_init/ServoInit.cpp.i
+.PHONY : src/state_machine/servos/servo_init/ServoInit.cpp.i
+
+src/state_machine/servos/servo_init/ServoInit.s: src/state_machine/servos/servo_init/ServoInit.cpp.s
+.PHONY : src/state_machine/servos/servo_init/ServoInit.s
+
+# target to generate assembly for a file
+src/state_machine/servos/servo_init/ServoInit.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/robopax.dir/build.make CMakeFiles/robopax.dir/src/state_machine/servos/servo_init/ServoInit.cpp.s
+.PHONY : src/state_machine/servos/servo_init/ServoInit.cpp.s
+
 src/state_machine/step_sequencer/Step.o: src/state_machine/step_sequencer/Step.cpp.o
 .PHONY : src/state_machine/step_sequencer/Step.o
 
@@ -480,9 +480,6 @@ help:
 	@echo "... src/common/logger/Logger.o"
 	@echo "... src/common/logger/Logger.i"
 	@echo "... src/common/logger/Logger.s"
-	@echo "... src/components/Component.o"
-	@echo "... src/components/Component.i"
-	@echo "... src/components/Component.s"
 	@echo "... src/components/component_manager/ComponentManager.o"
 	@echo "... src/components/component_manager/ComponentManager.i"
 	@echo "... src/components/component_manager/ComponentManager.s"
@@ -510,6 +507,9 @@ help:
 	@echo "... src/state_machine/servos/servo_idle/ServoIdle.o"
 	@echo "... src/state_machine/servos/servo_idle/ServoIdle.i"
 	@echo "... src/state_machine/servos/servo_idle/ServoIdle.s"
+	@echo "... src/state_machine/servos/servo_init/ServoInit.o"
+	@echo "... src/state_machine/servos/servo_init/ServoInit.i"
+	@echo "... src/state_machine/servos/servo_init/ServoInit.s"
 	@echo "... src/state_machine/step_sequencer/Step.o"
 	@echo "... src/state_machine/step_sequencer/Step.i"
 	@echo "... src/state_machine/step_sequencer/Step.s"

@@ -4,10 +4,13 @@
 
 std::string StateUtils::toString(StateEnum stateEnum) {
     switch (stateEnum) {
+        case StateEnum::ABORTED: return "Aborted";
+        case StateEnum::ABORTING: return "Aborting";
         case StateEnum::INVALID: return "Invalid";
         case StateEnum::UNSET: return "Unset";
-        case StateEnum::IDLE: return "Motor Idle";
-        case StateEnum::POSITION_CONTROL: return "Motor Position Control";
-        default: return "Invalid";
+        case StateEnum::INIT: return "Init";
+        case StateEnum::IDLE: return "Idle";
+        case StateEnum::POSITION_CONTROL: return "Position Control";
+        default: return "UNKNOWN";
     }
 }

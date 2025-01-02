@@ -4,6 +4,7 @@
 #include <vector>
 #include "Step.h"
 #include "../../common/logger/Logger.h"
+#include <memory>
 
 class StepSequencer {
 public:
@@ -19,6 +20,6 @@ private:
     Logger& m_logger;
     int m_currentStepIdx;
     void advanceStep();
-    std::vector<Step> m_steps;
+    std::vector<std::shared_ptr<Step>> m_steps;
 
 };

@@ -21,12 +21,16 @@ public:
     // Optional: name or ID for logging/debug
     std::string getName();
     StateEnum getStateId();
+    StateEnum getAbortStateId();
+    bool getIsActive();
+    // StepSequencer getStepSequencer();
 
     float getStateActiveDurationMs();
 
     bool operator==(State& other);
 
     std::unordered_map<StateEnum, Permissive> m_permissives;
+
 
 
 protected:
@@ -44,7 +48,7 @@ protected:
     StateEnum m_abortStateId;
     bool m_isActive;
     float m_stateActiveDuration_ms;
-    StepSequencer m_stepSequencer;
+    // StepSequencer m_stepSequencer;
     // State& m_prevState;
 
 };

@@ -11,8 +11,7 @@ State::State(Logger& logger, const std::string& stateName, StateEnum stateNumber
       m_stateId(stateNumber),
       m_abortStateId(abortStateId),
       m_isActive(false),
-      m_logger(logger),
-      m_stepSequencer(StepSequencer(logger))
+      m_logger(logger)
 {
     std::unordered_map<StateEnum, Permissive> m_permissives;
     registerPermissive(abortStateId, Permissive([this]() { return shouldAbort(); }, "Immediately abort if this permmissve evalutes to true"));
@@ -29,7 +28,6 @@ void State::deactivate()
     onDeactivate();
     m_isActive = false;
     m_stateActiveDuration_ms = 0;
-    m_stepSequencer.reset();
 }
 
 void State::update(int deltaMs)
@@ -80,9 +78,14 @@ bool State::operator==(State& other)
     return m_stateId == other.getStateId();
 }
 
-void State::addStep(Step step)
+StateEnum State::getAbortStateId()
 {
-    m_stepSequencer.addStep(step);
+    return m_abortStateId;
+}
+
+bool State::getIsActive()
+{
+    return m_isActive;
 }
 
 

@@ -8,7 +8,7 @@
 
 class ServoSim : public ServoControllerComponent{
 public:
-    ServoSim(Logger& logger, const std::string& name, ServoData& data, ServoCmd& cmd);
+    ServoSim(Logger& logger, const std::string& name);
 
     void init() override;
     void setEnable(bool enable) override;

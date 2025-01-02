@@ -5,10 +5,11 @@
 #include "models/ServoData.h"
 #include "models/ServoCmd.h"
 #include "../Component.h"
+#include <memory>
 
 class ServoControllerComponent : public Component {
 public:
-    ServoControllerComponent(const std::string& componentName, ServoData& data, ServoCmd& cmd): m_data(data), m_cmd(cmd), Component(componentName) {};
+    ServoControllerComponent(const std::string& componentName): Component(componentName) {};
 
     virtual void init() = 0;
 
@@ -26,6 +27,8 @@ public:
 
 
 protected:
-    ServoData& m_data;
-    ServoCmd& m_cmd;
+    std::shared_ptr<ServoData> m_data = std::make_shared<ServoData>();
+    std::shared_ptr<ServoCmd> m_cmd = std::make_shared<ServoCmd>();
+    // ServoData& m_data;
+    // ServoCmd& m_cmd;
 };

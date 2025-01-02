@@ -7,7 +7,8 @@
 
 ServoIdle::ServoIdle(Logger& logger, ServoIdleData& data, ServoControllerComponent& motor): m_data(data), m_motor(motor), State(logger, "ServoIdle", StateEnum::IDLE, StateEnum::ABORTING) {
 
-    registerPermissive(StateEnum::POSITION_CONTROL, Permissive([this]() { return m_motor.getActualPosition() == 30.0; }, "Exit idle mode when position is at resting position"));
+    // No permissives because this is an end state to idle
+    // registerPermissive(StateEnum::POSITION_CONTROL, Permissive([this]() { return m_motor.getActualPosition() == 30.0; }, "Exit idle mode when position is at resting position"));
 };
 
 void ServoIdle::onActivate()
