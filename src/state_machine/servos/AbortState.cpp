@@ -1,11 +1,11 @@
 #include <iostream>
 #include "AbortState.h"
-#include "../../servos/ServoController.h"
+#include "../../components/servos/ServoControllerComponent.h"
 #include "../State.h"
 #include <vector>
 #include "../step_sequencer/Step.h"
 
-AbortState::AbortState(Logger& logger, ServoController& motor): m_motor(motor), State(logger, "AbortState", StateEnum::ABORTING, this->m_abortStateId) 
+AbortState::AbortState(Logger& logger, ServoControllerComponent& motor): m_motor(motor), State(logger, "AbortState", StateEnum::ABORTING, this->m_abortStateId) 
 {
 };
 
@@ -21,8 +21,8 @@ void AbortState::onDeactivate()
 
 void AbortState::onUpdate(int deltaMs)
 {
-    m_motor.setDesiredPosition(m_motor.getActualPosition());
-    m_motor.update(deltaMs);
+    m_motor.setDesiredPositionDeg(m_motor.getActualPosition());
+    // m_motor.update(deltaMs);
     m_logger.log([this](std::stringstream& ss) { ss << "Aborting motor at position: " << m_motor.getActualPosition(); });
 }
 

@@ -177,6 +177,78 @@ src/common/logger/Logger.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/robopax.dir/build.make CMakeFiles/robopax.dir/src/common/logger/Logger.cpp.s
 .PHONY : src/common/logger/Logger.cpp.s
 
+src/components/Component.o: src/components/Component.cpp.o
+.PHONY : src/components/Component.o
+
+# target to build an object file
+src/components/Component.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/robopax.dir/build.make CMakeFiles/robopax.dir/src/components/Component.cpp.o
+.PHONY : src/components/Component.cpp.o
+
+src/components/Component.i: src/components/Component.cpp.i
+.PHONY : src/components/Component.i
+
+# target to preprocess a source file
+src/components/Component.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/robopax.dir/build.make CMakeFiles/robopax.dir/src/components/Component.cpp.i
+.PHONY : src/components/Component.cpp.i
+
+src/components/Component.s: src/components/Component.cpp.s
+.PHONY : src/components/Component.s
+
+# target to generate assembly for a file
+src/components/Component.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/robopax.dir/build.make CMakeFiles/robopax.dir/src/components/Component.cpp.s
+.PHONY : src/components/Component.cpp.s
+
+src/components/component_manager/ComponentManager.o: src/components/component_manager/ComponentManager.cpp.o
+.PHONY : src/components/component_manager/ComponentManager.o
+
+# target to build an object file
+src/components/component_manager/ComponentManager.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/robopax.dir/build.make CMakeFiles/robopax.dir/src/components/component_manager/ComponentManager.cpp.o
+.PHONY : src/components/component_manager/ComponentManager.cpp.o
+
+src/components/component_manager/ComponentManager.i: src/components/component_manager/ComponentManager.cpp.i
+.PHONY : src/components/component_manager/ComponentManager.i
+
+# target to preprocess a source file
+src/components/component_manager/ComponentManager.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/robopax.dir/build.make CMakeFiles/robopax.dir/src/components/component_manager/ComponentManager.cpp.i
+.PHONY : src/components/component_manager/ComponentManager.cpp.i
+
+src/components/component_manager/ComponentManager.s: src/components/component_manager/ComponentManager.cpp.s
+.PHONY : src/components/component_manager/ComponentManager.s
+
+# target to generate assembly for a file
+src/components/component_manager/ComponentManager.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/robopax.dir/build.make CMakeFiles/robopax.dir/src/components/component_manager/ComponentManager.cpp.s
+.PHONY : src/components/component_manager/ComponentManager.cpp.s
+
+src/components/servos/ServoSim.o: src/components/servos/ServoSim.cpp.o
+.PHONY : src/components/servos/ServoSim.o
+
+# target to build an object file
+src/components/servos/ServoSim.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/robopax.dir/build.make CMakeFiles/robopax.dir/src/components/servos/ServoSim.cpp.o
+.PHONY : src/components/servos/ServoSim.cpp.o
+
+src/components/servos/ServoSim.i: src/components/servos/ServoSim.cpp.i
+.PHONY : src/components/servos/ServoSim.i
+
+# target to preprocess a source file
+src/components/servos/ServoSim.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/robopax.dir/build.make CMakeFiles/robopax.dir/src/components/servos/ServoSim.cpp.i
+.PHONY : src/components/servos/ServoSim.cpp.i
+
+src/components/servos/ServoSim.s: src/components/servos/ServoSim.cpp.s
+.PHONY : src/components/servos/ServoSim.s
+
+# target to generate assembly for a file
+src/components/servos/ServoSim.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/robopax.dir/build.make CMakeFiles/robopax.dir/src/components/servos/ServoSim.cpp.s
+.PHONY : src/components/servos/ServoSim.cpp.s
+
 src/main.o: src/main.cpp.o
 .PHONY : src/main.o
 
@@ -200,30 +272,6 @@ src/main.s: src/main.cpp.s
 src/main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/robopax.dir/build.make CMakeFiles/robopax.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
-
-src/servos/ServoSim.o: src/servos/ServoSim.cpp.o
-.PHONY : src/servos/ServoSim.o
-
-# target to build an object file
-src/servos/ServoSim.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/robopax.dir/build.make CMakeFiles/robopax.dir/src/servos/ServoSim.cpp.o
-.PHONY : src/servos/ServoSim.cpp.o
-
-src/servos/ServoSim.i: src/servos/ServoSim.cpp.i
-.PHONY : src/servos/ServoSim.i
-
-# target to preprocess a source file
-src/servos/ServoSim.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/robopax.dir/build.make CMakeFiles/robopax.dir/src/servos/ServoSim.cpp.i
-.PHONY : src/servos/ServoSim.cpp.i
-
-src/servos/ServoSim.s: src/servos/ServoSim.cpp.s
-.PHONY : src/servos/ServoSim.s
-
-# target to generate assembly for a file
-src/servos/ServoSim.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/robopax.dir/build.make CMakeFiles/robopax.dir/src/servos/ServoSim.cpp.s
-.PHONY : src/servos/ServoSim.cpp.s
 
 src/state_machine/State.o: src/state_machine/State.cpp.o
 .PHONY : src/state_machine/State.o
@@ -432,12 +480,18 @@ help:
 	@echo "... src/common/logger/Logger.o"
 	@echo "... src/common/logger/Logger.i"
 	@echo "... src/common/logger/Logger.s"
+	@echo "... src/components/Component.o"
+	@echo "... src/components/Component.i"
+	@echo "... src/components/Component.s"
+	@echo "... src/components/component_manager/ComponentManager.o"
+	@echo "... src/components/component_manager/ComponentManager.i"
+	@echo "... src/components/component_manager/ComponentManager.s"
+	@echo "... src/components/servos/ServoSim.o"
+	@echo "... src/components/servos/ServoSim.i"
+	@echo "... src/components/servos/ServoSim.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
-	@echo "... src/servos/ServoSim.o"
-	@echo "... src/servos/ServoSim.i"
-	@echo "... src/servos/ServoSim.s"
 	@echo "... src/state_machine/State.o"
 	@echo "... src/state_machine/State.i"
 	@echo "... src/state_machine/State.s"

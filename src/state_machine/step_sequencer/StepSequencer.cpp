@@ -44,4 +44,9 @@ void StepSequencer::evaluate()
 {
     Step currentStep = m_steps[m_currentStepIdx];
     currentStep.update();
-}
+};
+
+void StepSequencer::reset()
+{
+    m_currentStepIdx = 0;
+};

@@ -4,12 +4,13 @@
 #include <functional>
 #include "StateUtils.h"
 
-StateMachine::StateMachine(Logger &logger, const std::string &stateMachineName, State &initialState, State &abortState) :
+StateMachine::StateMachine(Logger &logger, const std::string &stateMachineName, State &initialState, State &abortState, ComponentManager& componentManager) :
     m_stateMachineName(stateMachineName),
     m_currentState(initialState),
     m_logger(logger),
     m_initialState(initialState),
-    m_abortState(abortState)
+    m_abortState(abortState),
+    m_componentManager(componentManager)
 {
     std::unordered_map<StateEnum, std::reference_wrapper<State>> m_states;
     registerState(initialState);
@@ -20,13 +21,15 @@ void StateMachine::init()
 {
     m_logger.log([this](std::stringstream &ss)
                  { ss << m_stateMachineName << " is initialized!"; }, LogLevel::INFO);
+    
+    m_currentState.get().activate();
 }
 
 void StateMachine::update(int deltaTimeMs)
 {
     try
     {
-        m_currentState.get().update(deltaTimeMs);
+        m_componentManager.readComponents(deltaTimeMs);
 
         StateEnum next_state = m_currentState.get().evaluatePermissives();
         if (next_state != StateEnum::UNSET && next_state != StateEnum::INVALID)
@@ -38,6 +41,10 @@ void StateMachine::update(int deltaTimeMs)
             // m_logger.log([this](std::stringstream &ss)
             //              { ss << m_stateMachineName << " has not transitioned away from: " << m_currentState.get().getName(); }, LogLevel::INFO);
         }
+
+        m_currentState.get().update(deltaTimeMs);
+
+        m_componentManager.writeComponents(deltaTimeMs);
     }
     catch (const std::exception &ex)
     {

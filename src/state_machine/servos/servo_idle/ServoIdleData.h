@@ -1,4 +1,4 @@
-#include "../../../servos/models/ServoData.h"
+#include "../../../components/servos/models/ServoData.h"
 
 class ServoIdleData {
 public:

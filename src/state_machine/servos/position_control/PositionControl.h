@@ -1,14 +1,14 @@
 #pragma once
 
 #include "../../State.h"
-#include "../../../servos/ServoController.h"
+#include "../../../components/servos/ServoControllerComponent.h"
 #include <vector>
 #include "../../step_sequencer/Step.h"
 #include "../../StateMachine.h"
 
 class PositionControl : public State {
 public:
-    PositionControl(Logger& logger, ServoController& motor);
+    PositionControl(Logger& logger, ServoControllerComponent& motor);
 
 protected:
     void onActivate() override;
@@ -23,5 +23,5 @@ protected:
     bool m_isActive;
 
 private:
-    ServoController& m_motor;
+    ServoControllerComponent& m_motor;
 };

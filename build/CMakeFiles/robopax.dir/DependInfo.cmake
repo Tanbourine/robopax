@@ -10,8 +10,10 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/mnt/c/Users/dyzta/Documents/dtan/Projects/robopax/src/common/logger/ConsoleLogger.cpp" "CMakeFiles/robopax.dir/src/common/logger/ConsoleLogger.cpp.o" "gcc" "CMakeFiles/robopax.dir/src/common/logger/ConsoleLogger.cpp.o.d"
   "/mnt/c/Users/dyzta/Documents/dtan/Projects/robopax/src/common/logger/Logger.cpp" "CMakeFiles/robopax.dir/src/common/logger/Logger.cpp.o" "gcc" "CMakeFiles/robopax.dir/src/common/logger/Logger.cpp.o.d"
+  "/mnt/c/Users/dyzta/Documents/dtan/Projects/robopax/src/components/Component.cpp" "CMakeFiles/robopax.dir/src/components/Component.cpp.o" "gcc" "CMakeFiles/robopax.dir/src/components/Component.cpp.o.d"
+  "/mnt/c/Users/dyzta/Documents/dtan/Projects/robopax/src/components/component_manager/ComponentManager.cpp" "CMakeFiles/robopax.dir/src/components/component_manager/ComponentManager.cpp.o" "gcc" "CMakeFiles/robopax.dir/src/components/component_manager/ComponentManager.cpp.o.d"
+  "/mnt/c/Users/dyzta/Documents/dtan/Projects/robopax/src/components/servos/ServoSim.cpp" "CMakeFiles/robopax.dir/src/components/servos/ServoSim.cpp.o" "gcc" "CMakeFiles/robopax.dir/src/components/servos/ServoSim.cpp.o.d"
   "/mnt/c/Users/dyzta/Documents/dtan/Projects/robopax/src/main.cpp" "CMakeFiles/robopax.dir/src/main.cpp.o" "gcc" "CMakeFiles/robopax.dir/src/main.cpp.o.d"
-  "/mnt/c/Users/dyzta/Documents/dtan/Projects/robopax/src/servos/ServoSim.cpp" "CMakeFiles/robopax.dir/src/servos/ServoSim.cpp.o" "gcc" "CMakeFiles/robopax.dir/src/servos/ServoSim.cpp.o.d"
   "/mnt/c/Users/dyzta/Documents/dtan/Projects/robopax/src/state_machine/State.cpp" "CMakeFiles/robopax.dir/src/state_machine/State.cpp.o" "gcc" "CMakeFiles/robopax.dir/src/state_machine/State.cpp.o.d"
   "/mnt/c/Users/dyzta/Documents/dtan/Projects/robopax/src/state_machine/StateMachine.cpp" "CMakeFiles/robopax.dir/src/state_machine/StateMachine.cpp.o" "gcc" "CMakeFiles/robopax.dir/src/state_machine/StateMachine.cpp.o.d"
   "/mnt/c/Users/dyzta/Documents/dtan/Projects/robopax/src/state_machine/StateUtils.cpp" "CMakeFiles/robopax.dir/src/state_machine/StateUtils.cpp.o" "gcc" "CMakeFiles/robopax.dir/src/state_machine/StateUtils.cpp.o.d"

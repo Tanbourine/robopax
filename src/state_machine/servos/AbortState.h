@@ -1,13 +1,13 @@
 #pragma once
 
 #include "../State.h"
-#include "../../servos/ServoController.h"
+#include "../../components/servos/ServoControllerComponent.h"
 #include <vector>
 #include "../step_sequencer/Step.h"
 
 class AbortState : public State {
 public:
-    AbortState(Logger& logger, ServoController& motor);
+    AbortState(Logger& logger, ServoControllerComponent& motor);
 
 protected:
     void onActivate() override;
@@ -22,6 +22,6 @@ protected:
     std::vector<Step> m_steps;
 
 private:
-    ServoController& m_motor;
+    ServoControllerComponent& m_motor;
 
 };

@@ -29,6 +29,7 @@ void State::deactivate()
     onDeactivate();
     m_isActive = false;
     m_stateActiveDuration_ms = 0;
+    m_stepSequencer.reset();
 }
 
 void State::update(int deltaMs)

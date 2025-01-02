@@ -5,10 +5,11 @@
 #include <unordered_map>
 #include <functional>
 #include "../common/logger/Logger.h"
+#include "../components/component_manager/ComponentManager.h"
 
 class StateMachine {
 public:
-    StateMachine(Logger& logger, const std::string& stateMachineName, State& initialState, State& abortState);
+    StateMachine(Logger& logger, const std::string& stateMachineName, State& initialState, State& abortState, ComponentManager& componentManager);
 
     void init();
     void update(int deltaTimeMs);
@@ -19,6 +20,7 @@ private:
     Logger& m_logger;
     State& m_initialState;
     State& m_abortState;
+    ComponentManager& m_componentManager;
     void transitionStates(StateEnum destState);
     void abort();
     std::reference_wrapper<State> m_currentState;

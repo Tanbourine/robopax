@@ -13,6 +13,7 @@ public:
     bool hasFinished();
     void evaluate();
     Step& getStep(int idx);
+    void reset();
 
 private:
     Logger& m_logger;
