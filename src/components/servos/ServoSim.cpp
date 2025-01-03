@@ -40,6 +40,10 @@ void ServoSim::read(int deltaTime_ms) {
 };
 
 void ServoSim::write(int deltaTime_ms) {
+    if (!m_cmd->m_enable) {
+        return;
+    }
+    
     float positionError_deg = m_cmd->m_position_deg - m_data->m_position_deg;
     float maxStepDeg = getMaxStepDeg(deltaTime_ms);
     float nextStepDeg = planNextStep(maxStepDeg);

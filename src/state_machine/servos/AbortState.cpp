@@ -31,9 +31,3 @@ bool AbortState::shouldAbort()
     return false;
 }
 
-void AbortState::createSteps()
-{
-    std::vector<Step> m_steps;
-}
-
-

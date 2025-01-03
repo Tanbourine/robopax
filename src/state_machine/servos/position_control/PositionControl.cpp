@@ -31,6 +31,7 @@ PositionControl::PositionControl(Logger& logger, ServoControllerComponent& motor
 
 void PositionControl::onActivate()
 {
+    m_motor.setEnable(true);
 }
 
 void PositionControl::onDeactivate()
@@ -39,8 +40,8 @@ void PositionControl::onDeactivate()
 
 void PositionControl::onUpdate(int deltaMs)
 {
-    m_stepSequencer->evaluate();
     m_stepSequencer->evaluatePermissives();
+    m_stepSequencer->evaluate();
 }
 
 
@@ -49,10 +50,6 @@ bool PositionControl::shouldAbort()
     return false;
 }
 
-void PositionControl::createSteps()
-{
-    std::vector<Step> m_step;
-}
 
 
 

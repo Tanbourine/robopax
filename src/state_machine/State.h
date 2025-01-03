@@ -40,7 +40,6 @@ protected:
     virtual void onDeactivate() = 0;
     virtual void onUpdate(int deltaMs) = 0;
     virtual bool shouldAbort() = 0;
-    virtual void createSteps() = 0;
 
     Logger& m_logger;
     std::string m_stateName;

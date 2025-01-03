@@ -16,7 +16,6 @@ protected:
     void onDeactivate() override;
     void onUpdate(int deltaMs) override;
     bool shouldAbort() override;
-    void createSteps() override;
 
     std::vector<Step> m_steps;
     StateEnum m_state;

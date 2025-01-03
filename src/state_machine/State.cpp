@@ -55,7 +55,7 @@ StateEnum State::evaluatePermissives()
         }
     }
 
-    return StateEnum::INVALID;
+    return m_stateId;
 }
 
 std::string State::getName()

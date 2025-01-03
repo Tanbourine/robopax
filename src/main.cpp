@@ -21,10 +21,6 @@ int main() {
 
 
     // Initialize hardware
-    ServoData motorData;
-    ServoCmd motorCmd;
-    // motorCmd.m_max_velocity_deg_s = 30.0;
-
     ServoSim motor(logger, "Motor1");
 
     ComponentManager componentManager(logger);
@@ -32,16 +28,16 @@ int main() {
 
     // Initialize States
     ServoInit initState(logger, motor);
-    ServoIdleData  motorIdleData(motorData);
-    ServoIdle idleState(logger, motorIdleData, motor);
+    ServoIdle idleState(logger, motor);
     PositionControl positionControlState(logger, motor);
     AbortState abortState(logger, motor);
 
     StateMachine sm(logger, "Test State Machine", initState, abortState, componentManager);
-    sm.init();
 
     sm.registerState(positionControlState);
     sm.registerState(idleState);
+
+    sm.init();
 
     float secondsToSimulate = 10.0;
     int deltaMs = 100;

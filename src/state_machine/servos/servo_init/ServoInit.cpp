@@ -32,7 +32,4 @@ bool ServoInit::shouldAbort()
 
 }
 
-void ServoInit::createSteps()
-{
 
-}
