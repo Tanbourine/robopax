@@ -5,24 +5,21 @@
 #include <vector>
 #include "../step_sequencer/Step.h"
 
-AbortState::AbortState(Logger& logger, ServoControllerComponent& motor): m_motor(motor), State(logger, "AbortState", StateEnum::ABORTING, this->m_abortStateId) 
+AbortState::AbortState(Logger& logger, ServoControllerComponent& motor): m_motor(motor), State(logger, "AbortState", StateEnum::ABORTING, StateEnum::ABORTED) 
 {
 };
 
 void AbortState::onActivate()
 {
-    // std::cout << getName() << " is active!" << std::endl;
 }
 
 void AbortState::onDeactivate()
 {
-    // std::cout << getName() << " is deactivated!" << std::endl;
 }
 
 void AbortState::onUpdate(int deltaMs)
 {
     m_motor.setDesiredPositionDeg(m_motor.getActualPosition());
-    // m_motor.update(deltaMs);
     m_logger.log([this](std::stringstream& ss) { ss << "Aborting motor at position: " << m_motor.getActualPosition(); });
 }
 

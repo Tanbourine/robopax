@@ -43,7 +43,6 @@ void State::registerPermissive(StateEnum destState, Permissive permissive)
     if (m_permissives.find(destState) == m_permissives.end())
     {
         m_permissives.insert({destState, std::move(permissive)});
-        m_logger.log([this, &destState](std::stringstream& ss) { ss << "Registered permissive to transition to: " << StateUtils::toString(destState); });
     }
 }
 

@@ -29,7 +29,7 @@ void ServoInit::onUpdate(int deltaMs)
 
 bool ServoInit::shouldAbort()
 {
-
+    return false;
 }
 
 

@@ -30,11 +30,19 @@ void StateMachine::update(int deltaTimeMs)
     {
         m_componentManager.readComponents(deltaTimeMs);
 
-        StateEnum next_state = m_currentState->evaluatePermissives();
-        if (next_state != m_currentState->getStateId())
+        if (m_currentState->shouldAbort())
         {
-            transitionStates(next_state);
+            // Call the state's specified abort state
+            transitionStates(m_currentState->getAbortStateId());
+        } else
+        {
+            StateEnum next_state = m_currentState->evaluatePermissives();
+            if (next_state != m_currentState->getStateId())
+            {
+                transitionStates(next_state);
+            }
         }
+
 
         m_currentState->update(deltaTimeMs);
 
@@ -50,17 +58,26 @@ void StateMachine::update(int deltaTimeMs)
 
 void StateMachine::transitionStates(StateEnum destState)
 {
+    if (destState == m_currentState->getStateId())
+    {
+        return;
+    }
+
     try
     {
         m_logger.log([this, &destState](std::stringstream &ss)
                      { ss << "Transitioning from " << StateUtils::toString(m_currentState->getStateId()) << " to : " << StateUtils::toString(destState); });
-        m_currentState->deactivate();
-        auto pair = m_states.find(destState);
-        if (m_states.find(destState) != m_states.end())
+
+
+        auto destStatePair = m_states.find(destState);
+        if (m_states.find(destState) == m_states.end())
         {
-            m_currentState = pair->second;
-            m_currentState->activate();
+            throw std::runtime_error("State " + StateUtils::toString(destState) + " has not been registered yet!");
         }
+
+        m_currentState->deactivate();
+        m_currentState = destStatePair->second;
+        m_currentState->activate();
     }
     catch (const std::exception &ex)
     {

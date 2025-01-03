@@ -2,16 +2,17 @@
 #include <vector>
 #include <functional>
 #include <string>
+#include "../Permissive.h"
 
 class Step {
 public:
-    Step(std::string description, std::function<void()> updateFunc, std::function<bool()> stepPermissive);
+    Step(std::string description, std::function<void()> updateFunc, Permissive permissive);
     bool evaluatePermissive();
     void update();
     std::string getDescription();
 
 private:
     std::string m_description;
-    std::function<bool()> m_stepPermissive;
+    Permissive m_permissive;
     std::function<void()> m_updateFunc;
 };

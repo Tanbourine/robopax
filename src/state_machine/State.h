@@ -9,9 +9,10 @@
 #include "Permissive.h"
 #include "step_sequencer/StepSequencer.h"
 
-class State {
+class State
+{
 public:
-    State(Logger& logger, const std::string& stateName, StateEnum stateId, StateEnum abortStateId);
+    State(Logger &logger, const std::string &stateName, StateEnum stateId, StateEnum abortStateId);
 
     void activate();
     void deactivate();
@@ -23,15 +24,13 @@ public:
     StateEnum getStateId();
     StateEnum getAbortStateId();
     bool getIsActive();
-    // StepSequencer getStepSequencer();
+    virtual bool shouldAbort() = 0;
 
     float getStateActiveDurationMs();
 
-    bool operator==(State& other);
+    bool operator==(State &other);
 
     std::unordered_map<StateEnum, Permissive> m_permissives;
-
-
 
 protected:
     void registerPermissive(StateEnum destState, Permissive permisive);
@@ -39,15 +38,11 @@ protected:
     virtual void onActivate() = 0;
     virtual void onDeactivate() = 0;
     virtual void onUpdate(int deltaMs) = 0;
-    virtual bool shouldAbort() = 0;
 
-    Logger& m_logger;
+    Logger &m_logger;
     std::string m_stateName;
     StateEnum m_stateId;
     StateEnum m_abortStateId;
     bool m_isActive;
     float m_stateActiveDuration_ms;
-    // StepSequencer m_stepSequencer;
-    // State& m_prevState;
-
 };

@@ -39,7 +39,7 @@ int main() {
 
     sm.init();
 
-    float secondsToSimulate = 10.0;
+    float secondsToSimulate = 7.5;
     int deltaMs = 100;
     int numSteps = (secondsToSimulate * 1000) / deltaMs;
 

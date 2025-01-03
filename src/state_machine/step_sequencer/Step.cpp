@@ -2,16 +2,17 @@
 #include "Step.h"
 #include <string>
 #include <functional>
+#include "../Permissive.h"
 
-Step::Step(std::string description, std::function<void()> updateFunc, std::function<bool()> stepPermissive) :
-    m_description(description), m_stepPermissive(stepPermissive), m_updateFunc(updateFunc)
+Step::Step(std::string description, std::function<void()> updateFunc, Permissive permissive) :
+    m_description(description), m_permissive(permissive), m_updateFunc(updateFunc)
 {
 
 }
 
 bool Step::evaluatePermissive()
 {
-    return m_stepPermissive();
+    return m_permissive.evaluate();
 }
 
 void Step::update()

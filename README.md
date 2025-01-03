@@ -2,6 +2,12 @@
 Robot Cat
 
 
+# Setup
+```
+# Install cmake
+sudo apt-get install cmake
+```
+
 # Instructions
 ```
 mkdir build

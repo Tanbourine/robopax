@@ -14,18 +14,18 @@ PositionControl::PositionControl(Logger& logger, ServoControllerComponent& motor
     m_stepSequencer->addStep(
         Step("Move to 50.0",
             [this]() { m_motor.setDesiredPositionDeg(50.0); },
-            [this]() { return m_motor.getActualPosition() == 50.0; }));
+            Permissive([this]() { return m_motor.getActualPosition() == 50.0; }, "Waiting for motor to reach 50 deg")));
 
     m_stepSequencer->addStep(
         Step("Move to 40.0",
             [this]() { m_motor.setDesiredPositionDeg(40.0); },
-            [this]() { return m_motor.getActualPosition() == 40.0; }));
+            Permissive([this]() { return m_motor.getActualPosition() == 40.0; }, "Waiting for motor to reach 40 deg")));
 
 
     m_stepSequencer->addStep(
         Step("Move to 65.0",
             [this]() { m_motor.setDesiredPositionDeg(65.0); },
-            [this]() { return m_motor.getActualPosition() == 65.0; }));
+            Permissive([this]() { return m_motor.getActualPosition() == 65.0; }, "Waiting for motor to reach 65 deg")));
 
 };
 
@@ -40,8 +40,7 @@ void PositionControl::onDeactivate()
 
 void PositionControl::onUpdate(int deltaMs)
 {
-    m_stepSequencer->evaluatePermissives();
-    m_stepSequencer->evaluate();
+    m_stepSequencer->update();
 }
 
 
